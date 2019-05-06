@@ -1,29 +1,9 @@
-# wikidata-neighbor-towns
+# Wikidata Neighboring Town Explorer
 
-## Project setup
-```
-npm install
-```
+This tool displays all neighboring towns from Wikidata for any given Austrian municipality. To find missing neighbors it also parses neighboring towns from the corresponding Wikipedia pages.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+A demo can be found here:
+https://neighborexplorer.kogelnikp.eu
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+For now the tool is only available in German and for Austrian municipalities.
+If you are interested in an English version or any other language, feel free to raise an issue or, even better, create a pull request.
