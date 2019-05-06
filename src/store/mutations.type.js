@@ -1,0 +1,11 @@
+export const FETCH_DISTRICTS_END = "setDistricts";
+export const FETCH_MUNICIPALITIES_END = "setMunicipalities";
+export const FETCH_WIKIPEDIA_NEIGHBORS_END = "setWikipediaNeighbors";
+export const FETCH_WIKIDATA_NEIGHBORS_END = "setWikidataNeighbors";
+export const FETCH_START = "setLoading";
+export const FETCH_WIKIDATA_NEIGHBORS_START = "fetchWikidataNeighborsStart";
+export const FETCH_WIKIPEDIA_NEIGHBORS_START = "fetchWikipediaNeighborsStart";
+export const SET_MUNICIPALITY = "setMunicipality";
+export const SET_DISTRICT = "setDistrict";
+export const SET_ERROR = "setError";
+export const RESET_STATE = "resetModuleState";
