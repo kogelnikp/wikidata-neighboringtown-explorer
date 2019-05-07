@@ -1,6 +1,11 @@
 <template>
   <v-app>
-    <v-toolbar app dense fixed clipped-left>
+    <v-toolbar app dense fixed clipped-left left>
+      <v-toolbar-side-icon
+        v-if="district"
+        class="hidden-lg-and-up"
+        @click="toggleDrawer"
+      />
       <v-toolbar-title class="headline text-uppercase">
         <router-link :to="{name: 'home'}" class="nolink">
         <span>NACHBARGEMEINDEN</span>
@@ -12,6 +17,7 @@
         icon 
         flat
         href="https://github.com/kogelnikp/wikidata-neighboringtown-explorer"
+        class="hidden-sm-and-down"
         target="_blank"
       >
         <v-img class="toolbar-icon" :src="require('./assets/GitHub-Mark-64px.png')" />
@@ -25,14 +31,17 @@
 </template>
 
 <script>
+
+import {
+  mapMutations,
+  mapGetters
+} from 'vuex'
+
 export default {
   name: 'App',
-  components: {
-  },
-  data () {
-    return {
-      //
-    }
+  methods: {    
+    ...mapMutations('app', ['toggleDrawer']),
+    ...mapGetters(['district'])
   }
 }
 </script>

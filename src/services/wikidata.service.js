@@ -6,7 +6,8 @@ export default {
   * @param {string} municipalityKey 
   */
   async getMunicipality(municipalityKey) {
-    const url = `https://www.wikidata.org/wiki/Special:EntityData/${municipalityKey}.json`;
+    // use mobile url, because www.wikidata.org always performs redirects on mobile devices
+    const url = `https://m.wikidata.org/wiki/Special:EntityData/${municipalityKey}.json`;
     return await fetch(url)
       .then(body => body.json())
       .then(j => ({ 
@@ -23,7 +24,7 @@ export default {
     const sparqlQuery = `SELECT ?item ?itemLabel
     WHERE 
     {
-      ?item p:P131 ?verwaltungseinheit.          
+      ?item p:P131 ?verwaltungseinheit.
       ?item p:P31 ?gemeinde.
       ?gemeinde ps:P31 wd:Q667509.
       FILTER NOT EXISTS { ?gemeinde pq:P582 ?y }

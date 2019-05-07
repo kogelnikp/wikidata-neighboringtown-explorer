@@ -18,8 +18,7 @@ export default {
     this.$store.dispatch(FETCH_DISTRICTS);
   },
   computed: {
-    ...mapGetters(['districts', 'district']),
-
+    ...mapGetters(['districts', 'district'])
   },
   methods: {
     onDistrictSelected(e) {

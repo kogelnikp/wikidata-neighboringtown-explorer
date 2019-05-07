@@ -8,4 +8,6 @@ export const FETCH_WIKIPEDIA_NEIGHBORS_START = "fetchWikipediaNeighborsStart";
 export const SET_MUNICIPALITY = "setMunicipality";
 export const SET_DISTRICT = "setDistrict";
 export const SET_ERROR = "setError";
-export const RESET_STATE = "resetModuleState";
+export const SET_DRAWER = "setDrawer";
+export const TOGGLE_DRAWER = "toggleDrawer";
+export const RESET_DISTRICT = "resetDistrict";

@@ -14,12 +14,20 @@
 </template>
 
 <script>
+import {mapMutations} from 'vuex';
+import { RESET_DISTRICT } from "@/store/mutations.type";
 import DistrictSelection from '@/components/DistrictSelection';
 
 export default {
   name: 'Home',
   components: {
     DistrictSelection
+  },
+  methods: {
+    ...mapMutations([RESET_DISTRICT])
+  },
+  mounted() {
+    this.resetDistrict();
   }
 }
 </script>

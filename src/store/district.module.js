@@ -3,7 +3,8 @@ import { FETCH_MUNICIPALITIES, FETCH_DISTRICT } from './actions.type';
 import {
   FETCH_START,
   FETCH_MUNICIPALITIES_END,
-  SET_DISTRICT
+  SET_DISTRICT,
+  RESET_DISTRICT
 } from "./mutations.type";
 
 const state = {
@@ -57,6 +58,10 @@ const mutations = {
   },
   [SET_DISTRICT](state, district) {
     state.district = district;
+  },
+  [RESET_DISTRICT](state) {
+    state.district = undefined;
+    state.municipalities = [];
   }
 };
 

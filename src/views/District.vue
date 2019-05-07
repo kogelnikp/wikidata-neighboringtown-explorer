@@ -1,9 +1,8 @@
 <template>
 <div>
-    <v-navigation-drawer fixed clipped app>
+    <v-navigation-drawer fixed clipped app v-model="inputValue">
       <v-toolbar flat color="white">
         <DistrictSelection />
-        
       </v-toolbar>
 
       <v-divider></v-divider>
@@ -14,7 +13,6 @@
           :key="municipality.key"
           @click="onMunicipalitySelected(municipality)"
         >
-
           <v-list-tile-content>
             <v-list-tile-title>{{ municipality.label }}</v-list-tile-title>
           </v-list-tile-content>
@@ -29,7 +27,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapState, mapMutations } from "vuex";
 import { FETCH_MUNICIPALITIES, FETCH_DISTRICT, FETCH_DISTRICTS } from "@/store/actions.type";
 import DistrictSelection from '@/components/DistrictSelection';
 
@@ -46,7 +44,8 @@ export default {
       immediate: true,
     }
   },
-  methods:{
+  methods:{    
+    ...mapMutations('app', ['setDrawer']),
     onMunicipalitySelected(municipality) {
       this.$router.push({
         name: 'municipality', 
@@ -63,7 +62,16 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['district', 'municipalities'])
+    ...mapState('app', ['drawer']),
+    ...mapGetters(['district', 'municipalities']),
+    inputValue: {
+      get () {
+        return this.drawer
+      },
+      set (val) {
+        this.setDrawer(val)
+      }
+    }
   },
   async created() {
     this.fetchData();
